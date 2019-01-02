@@ -22,6 +22,8 @@ import {
   MatNativeDateModule,
   MatSelectModule,
   MatFormFieldModule } from '@angular/material';
+import { LoginComponent } from './login/login.component';
+import { AmplifyAngularModule, AmplifyService } from 'aws-amplify-angular';
 
 
 @NgModule({
@@ -29,7 +31,8 @@ import {
     AppComponent,
     ClaimsComponent,
     ClaimAddComponent,
-    ClaimDetailComponent
+    ClaimDetailComponent,
+    LoginComponent
   ],
   imports: [
   BrowserModule,
@@ -49,10 +52,11 @@ import {
   MatFormFieldModule,
   MatDatepickerModule,
   MatNativeDateModule,
-  MatSelectModule
+  MatSelectModule,
+  AmplifyAngularModule
 ],
 
-  providers: [MatDatepickerModule, DatePipe],
+  providers: [MatDatepickerModule, DatePipe, AmplifyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

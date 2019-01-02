@@ -1,0 +1,14 @@
+{
+    "providers": {
+        "awscloudformation": {
+            "AuthRoleName": "octankclaimsweb-20190102133540-authRole",
+            "UnauthRoleArn": "arn:aws:iam::716664005094:role/octankclaimsweb-20190102133540-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::716664005094:role/octankclaimsweb-20190102133540-authRole",
+            "Region": "us-west-2",
+            "DeploymentBucketName": "octankclaimsweb-20190102133540-deployment",
+            "UnauthRoleName": "octankclaimsweb-20190102133540-unauthRole",
+            "StackName": "octankclaimsweb-20190102133540",
+            "StackId": "arn:aws:cloudformation:us-west-2:716664005094:stack/octankclaimsweb-20190102133540/5a493c50-0ed6-11e9-b1c8-063a4d9c7b3c"
+        }
+    }
+}

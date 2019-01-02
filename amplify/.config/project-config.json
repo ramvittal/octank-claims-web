@@ -1,0 +1,20 @@
+{
+    "projectName": "octankclaimsweb",
+    "projectPath": "/Users/rvvittal/workspace/octank/octank-claims-web",
+    "defaultEditor": "sublime",
+    "frontendHandler": {
+        "javascript": "/usr/local/lib/node_modules/@aws-amplify/cli/node_modules/amplify-frontend-javascript"
+    },
+    "javascript": {
+        "framework": "angular",
+        "config": {
+            "SourceDir": "src",
+            "DistributionDir": "dist/octank-claims-web",
+            "BuildCommand": "npm run-script build",
+            "StartCommand": "ng serve"
+        }
+    },
+    "providers": {
+        "awscloudformation": "/usr/local/lib/node_modules/@aws-amplify/cli/node_modules/amplify-provider-awscloudformation"
+    }
+}
