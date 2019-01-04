@@ -1,7 +1,7 @@
 # Octank Claims Web
 
 This is an Angular 7 and AWS Amplify project that hosts artifacts for running the prototype serverless claims website on AWS. It uses AWS Amplify
-framework for user authentication that integrates with AWS Cognito. It also hosts the UI components that invokes AWS API Gateway endpoints
+framework for user authentication that integrates with AWS Cognito. Furthermore, it hosts the Angular Material UI components that invokes AWS API Gateway endpoints
 for creating and listing claims.
 
 
