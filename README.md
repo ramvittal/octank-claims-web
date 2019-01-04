@@ -12,18 +12,13 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 1. Execute environment setup instructions mentioned here - https://github.com/ramvittal/octank-claims-master/blob/master/README.md  
-
+2. Setup your local envrionment for angular and amplify development - https://aws-amplify.github.io/docs/js/start?platform=angular
 
 ### Installing
 1. Checkout this project  
 2. Update apiUrl in claims-api.service.ts
 3. Enable cors for api if needed - https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-cors.html 
-
-
-Run the folowing commands from your project root  
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
+4. Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. 
 
 
 
