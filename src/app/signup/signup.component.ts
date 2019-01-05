@@ -43,6 +43,10 @@ export class SignupComponent implements OnInit {
       .subscribe(
         result => {
           this.successfullySignup = true;
+          this.confirmationForm = this.fb.group({
+            'username': [username, Validators.required],
+            'confirmationCode': ['', Validators.required]
+            });
         },
         error => {
           console.log(error);
