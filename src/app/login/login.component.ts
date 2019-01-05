@@ -1,7 +1,7 @@
-import { AmplifyService } from 'aws-amplify-angular';
-import awsconfig from '../../aws-exports';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from './../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -9,40 +9,34 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  public loginForm: FormGroup;
 
- url = 'https://' + awsconfig.aws_project_region + '.console.aws.amazon.com/pinpoint/home/?region='
-        + awsconfig.aws_project_region + '#/apps/'
-        + awsconfig.aws_mobile_analytics_app_id + '/analytics/events';
-  eventsSent = 0;
-  analyticsEventSent = false;
-
-  signedIn: boolean;
-    user: any;
-    greeting: string;
-
-  constructor( private amplifyService: AmplifyService, private router: Router ) {
-
-    this.amplifyService.authStateChange$
-        .subscribe(authState => {
-            this.signedIn = authState.state === 'signedIn';
-            if (!authState.user) {
-                this.user = null;
-            } else {
-                this.user = authState.user;
-                this.greeting = 'Howdy ' + this.user.username;
-            }
-
-            console.log('user signedin: ' + this.signedIn);
-
-            if ( this.signedIn )  {
-                this.router.navigate(['/claims']);
-            }
-
-    });
-
-}
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private auth: AuthService
+  ) { }
 
   ngOnInit() {
+    this.initForm();
   }
 
+  initForm() {
+    this.loginForm = this.fb.group({
+      'username': ['', Validators.required],
+      'password': ['', Validators.required]
+    });
+  }
+
+  onSubmitLogin(value: any) {
+    const username = value.username, password = value.password;
+    this.auth.signIn(username, password)
+      .subscribe(
+        result => {
+          this.router.navigate(['/']);
+        },
+        error => {
+          console.log(error);
+        });
+  }
 }

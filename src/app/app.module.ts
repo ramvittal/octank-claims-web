@@ -3,12 +3,15 @@ import { NgModule } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AuthService } from './auth.service';
 import { ClaimsComponent } from './claims/claims.component';
 import { ClaimAddComponent } from './claim-add/claim-add.component';
 import { ClaimDetailComponent } from './claim-detail/claim-detail.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+ 
 import {
   MatInputModule,
   MatPaginatorModule,
@@ -21,7 +24,9 @@ import {
   MatDatepickerModule,
   MatNativeDateModule,
   MatSelectModule,
+  MatToolbarModule,
   MatFormFieldModule } from '@angular/material';
+  import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { AmplifyAngularModule, AmplifyService } from 'aws-amplify-angular';
 
@@ -32,7 +37,8 @@ import { AmplifyAngularModule, AmplifyService } from 'aws-amplify-angular';
     ClaimsComponent,
     ClaimAddComponent,
     ClaimDetailComponent,
-    LoginComponent
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
   BrowserModule,
@@ -53,10 +59,11 @@ import { AmplifyAngularModule, AmplifyService } from 'aws-amplify-angular';
   MatDatepickerModule,
   MatNativeDateModule,
   MatSelectModule,
+  MatToolbarModule,
   AmplifyAngularModule
 ],
 
-  providers: [MatDatepickerModule, DatePipe, AmplifyService],
+  providers: [MatDatepickerModule, DatePipe, AmplifyService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
